@@ -1,1 +1,19 @@
-<p>core works!</p>
+<div class="page-container">
+  <div class="button"> 
+    <button class="add-user-btn" >Add User</button>
+  </div>
+     
+  <ng-template #loading>
+    <p>Loading users...</p>
+  </ng-template>
+  
+  <ng-container *ngIf="users$ | async as users; else loading">
+  
+    <article>
+      <app-user-table [users]="users"
+      ></app-user-table>
+    </article>
+  
+  </ng-container>
+  
+</div>

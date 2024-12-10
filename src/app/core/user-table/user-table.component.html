@@ -1,1 +1,23 @@
-<p>user-table works!</p>
+<section class="user-table-section">
+  <h2>Users</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td><button [ngStyle]="{ 'background-color': user.isActive ? 'red' : 'green' }" class="toggle-btn"
+           >
+            {{user.isActive? "Deactive" : "Active"}}
+          </button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
