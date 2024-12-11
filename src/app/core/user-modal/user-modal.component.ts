@@ -22,7 +22,8 @@ export class UserModalComponent {
  
    ngOnInit(): void {
        this.addNewUserForm = this.formBilder.group({
-         name: ['', [Validators.required]]  
+         name: ['', [Validators.required]],
+         isActive: [false], 
        }); 
      }
 }
