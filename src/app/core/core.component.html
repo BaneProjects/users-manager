@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="button"> 
-    <button class="add-user-btn" [disabled]="!(isBtnForAddUserEnabled$ | async)">Add User</button>
+    <button class="add-user-btn" [disabled]="!(isBtnForAddUserEnabled$ | async)" (click)="onOpenUserModal()">Add User</button>
   </div>
      
   <ng-template #loading>
@@ -14,5 +14,5 @@
     </article>
   
   </ng-container>
-  
+  <app-user-modal *ngIf="isModalOpened" (closeModal)="onCloseUserModal()"></app-user-modal> 
 </div>

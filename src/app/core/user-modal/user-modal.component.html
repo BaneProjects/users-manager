@@ -1,1 +1,27 @@
-<p>user-modal works!</p>
+<div class="modal-overlay" (click) = "closeUserModal()"></div>
+<div class="holder">
+    <div class="modal-card">
+      <form [formGroup]="addNewUserForm">
+         <div class="modal-header">
+           <div class="title">Add new User</div>
+           <div class="close-modal" (click) = "closeUserModal()">&times;</div>
+         </div>
+         <div class="modal-body">
+           <div>
+            <label>Name</label>
+            <input id="name" type="text" formControlName="name"/>
+           </div>
+          
+           <div>
+            <label> 
+              <input type="checkbox"/>
+              <span>Active</span>
+            </label>
+           </div>
+         
+            <button>Create User</button>
+          
+         </div>
+        </form>
+    </div>
+  </div>
