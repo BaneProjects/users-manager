@@ -24,7 +24,8 @@ This application provides the following capabilities for managing users.
 - **RxJS**
 - **SCSS**
 
-  ## Setup
-  1. Clone the repository.
-  2. Run command for install dependencies: `npm install`
-  3. Run the app: `ng serve`
+## Setup
+
+1. Clone the repository.
+2. Run command for install dependencies: `npm install`
+3. Run the app: `ng serve`
