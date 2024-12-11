@@ -12,7 +12,8 @@
       <tr *ngFor="let user of users">
         <td>{{ user.id }}</td>
         <td>{{ user.name }}</td>
-        <td><button [ngStyle]="{ 'background-color': user.isActive ? 'red' : 'green' }" class="toggle-btn" (click)="onToggleActiveStatus(user)">
+        <td><button [ngStyle]="{ 'background-color': user.isActive ? 'red' : 'green' }" class="toggle-btn"
+            (click)="onToggleActiveStatus(user)">
             {{user.isActive? "Deactive" : "Active"}}
           </button></td>
       </tr>

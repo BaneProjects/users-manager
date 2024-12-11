@@ -1,27 +1,30 @@
-# UsersManagerApp
+# Users Manager App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+This Angular application is designed for user management. It is built with Angular 18, incorporates Elf for state management, utilizes RxJS for handling reactive data streams, and uses SCSS for styling.
 
-## Development server
+## Capabilities
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application provides the following capabilities for managing users.
 
-## Code scaffolding
+1. **Table of Users**: Displays a list of users with the columns `id`,`name` and `activate`
+   - Each row has a toggle button for changing the `active` status.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. **Add User Modal**: Allows users to add a new user through a modal form.
+   - Fields: `name` (with async validation for uniqueness name), `active` (default: false)
+   - A "Create" button which becomes enabled only when the form is valid and the async validation has passed
 
-## Build
+3. **Button Enable Conditions**: The "Add User" button is only enabled if:
+   - All users are active.
+   - The total number of users is less than 5.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies
 
-## Running unit tests
+  **Angular 18**
+  **Elf** (state managment libary)
+  **RxJS**
+  **SCSS**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  ## Setup
+  1. Clone the repository.
+  2. Run command for install dependencies: `npm install`
+  3. Run the app: `ng serve`

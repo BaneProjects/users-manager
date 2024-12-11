@@ -13,19 +13,19 @@ const initialUsers: User[] = [
 ];
 
 export const userStore = createStore(
-  { name: 'users' }, 
-  withProps<{ users: User[] }>({ users: initialUsers }) 
+  { name: 'users' },
+  withProps<{ users: User[] }>({ users: initialUsers })
 );
 
 @Injectable({ providedIn: 'root' })
 export class UserStore {
   private store = userStore;
- public getUsers(): Observable<User[]> {
-    return this.store.pipe(select(state => state.users)); 
+  public getUsers(): Observable<User[]> {
+    return this.store.pipe(select(state => state.users));
   }
   updateUser(user: User) {
     userStore.update(state => ({
-      users: state.users.map(existingUser => 
+      users: state.users.map(existingUser =>
         existingUser.id === user.id ? { ...existingUser, isActive: user.isActive } : existingUser
       )
     }));
@@ -33,7 +33,7 @@ export class UserStore {
 
   addUser(user: User) {
     userStore.update(state => ({
-      users: [...state.users, { ...user, id: state.users.length + 1, isActive: user.isActive }] 
+      users: [...state.users, { ...user, id: state.users.length + 1, isActive: user.isActive }]
     }));
   }
 

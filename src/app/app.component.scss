@@ -1,19 +1,20 @@
-.app{
+.app {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  width:100%;
-  min-height: 100vh;
-  main{
-  flex:1;
   width: 100%;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
-  margin: 0 auto;
-}
+  min-height: 100vh;
+
+  main {
+    flex: 1;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+  }
 }

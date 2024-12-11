@@ -1,42 +1,33 @@
-<div class="modal-overlay" (click) = "closeUserModal()"></div>
+<div class="modal-overlay" (click)="closeUserModal()"></div>
 <div class="holder">
-    <div class="modal-card">
-      <form [formGroup]="addNewUserForm" (ngSubmit)="onSubmit()">
-         <div class="modal-header">
-           <div class="title">Add new User</div>
-           <div class="close-modal" (click) = "closeUserModal()">&times;</div>
-         </div>
-         <div class="modal-body">
-           <div>
-            <label>Name</label>
-            <input id="name" type="text" formControlName="name"/>
-           </div>
-           <div
-           *ngIf="
+  <div class="modal-card">
+    <form [formGroup]="addNewUserForm" (ngSubmit)="onSubmit()">
+      <div class="modal-header">
+        <div class="title">Add new User</div>
+        <div class="close-modal" (click)="closeUserModal()">&times;</div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <label>Name</label>
+          <input id="name" type="text" formControlName="name" />
+        </div>
+        <div *ngIf="
            addNewUserForm.get('name')?.invalid && addNewUserForm.get('name')?.dirty
-           "
-         >
-           <span
-             class="error"
-             *ngIf="addNewUserForm.get('name')?.hasError('required')"
-             >Name is required.</span>
-             <span
-            class="error"
-            *ngIf="addNewUserForm.get('name')?.hasError('uniqueName')"
-            >Name is already taken.</span>
-           
-         </div>
-           <div>
-            <label for="isActive"> 
-              <input type="checkbox" id="isActive" formControlName="isActive"/>
-              <span>Active</span>
-            </label>
-           </div>
-         
-            <button  type="submit"
-            [disabled]="addNewUserForm.invalid || addNewUserForm.pending">Create new User</button>
-          
-         </div>
-        </form>
-    </div>
+           ">
+          <span class="error" *ngIf="addNewUserForm.get('name')?.hasError('required')">Name is required.</span>
+          <span class="error" *ngIf="addNewUserForm.get('name')?.hasError('uniqueName')">Name is already taken.</span>
+
+        </div>
+        <div>
+          <label for="isActive">
+            <input type="checkbox" id="isActive" formControlName="isActive" />
+            <span>Active</span>
+          </label>
+        </div>
+
+        <button type="submit" [disabled]="addNewUserForm.invalid || addNewUserForm.pending">Create new User</button>
+
+      </div>
+    </form>
   </div>
+</div>

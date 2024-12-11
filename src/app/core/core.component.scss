@@ -1,18 +1,19 @@
-
-.page-container{
+.page-container {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-max-width: 800px;
-width: 100%;
-min-width: min-content;
-  article{
-      width: 100%;
+  max-width: 800px;
+  width: 100%;
+  min-width: min-content;
+
+  article {
+    width: 100%;
   }
-  .add-user-btn{
+
+  .add-user-btn {
     padding: 10px;
     width: 150px;
     text-align: center;
@@ -21,7 +22,8 @@ min-width: min-content;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    &:disabled{
+
+    &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { User } from '../state/model/user-model';
 import { UserStore } from '../state/user/user.store';
 import { UserTableComponent } from './user-table/user-table.component';
@@ -9,14 +9,14 @@ import { UserModalComponent } from './user-modal/user-modal.component';
 @Component({
   selector: 'app-core',
   standalone: true,
-  imports: [UserTableComponent,CommonModule,UserModalComponent],
+  imports: [UserTableComponent, CommonModule, UserModalComponent],
   templateUrl: './core.component.html',
   styleUrl: './core.component.scss'
 })
 export class CoreComponent {
   users$: Observable<User[]> | undefined;
   isBtnForAddUserEnabled$: Observable<boolean> | undefined;
-  isModalOpened:boolean = false;
+  isModalOpened: boolean = false;
   constructor(private userStore: UserStore) { }
   ngOnInit(): void {
     this.users$ = this.userStore.getUsers()
@@ -34,11 +34,11 @@ export class CoreComponent {
     this.userStore.updateUser(updatedUser)
 
   }
-  onOpenUserModal(){
+  onOpenUserModal() {
     this.isModalOpened = true;
-   }
- 
-   onCloseUserModal(){
-     this.isModalOpened = false;
-   }
+  }
+
+  onCloseUserModal() {
+    this.isModalOpened = false;
+  }
 }

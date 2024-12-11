@@ -1,18 +1,19 @@
 <div class="page-container">
-  <div class="button"> 
-    <button class="add-user-btn" [disabled]="!(isBtnForAddUserEnabled$ | async)" (click)="onOpenUserModal()">Add User</button>
+  <div class="button">
+    <button class="add-user-btn" [disabled]="!(isBtnForAddUserEnabled$ | async)" (click)="onOpenUserModal()">Add
+      User</button>
   </div>
-     
+
   <ng-template #loading>
     <p>Loading users...</p>
   </ng-template>
-  
+
   <ng-container *ngIf="users$ | async as users; else loading">
-  
+
     <article>
-      <app-user-table [users]="users"  (toggleActive)="onToggleUserActiveStatus($event)"></app-user-table>
+      <app-user-table [users]="users" (toggleActive)="onToggleUserActiveStatus($event)"></app-user-table>
     </article>
-  
+
   </ng-container>
-  <app-user-modal *ngIf="isModalOpened" (closeModal)="onCloseUserModal()"></app-user-modal> 
+  <app-user-modal *ngIf="isModalOpened" (closeModal)="onCloseUserModal()"></app-user-modal>
 </div>
