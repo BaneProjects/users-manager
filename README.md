@@ -19,10 +19,10 @@ This application provides the following capabilities for managing users.
 
 ## Technologies
 
-  **Angular 18**
-  **Elf** (state managment libary)
-  **RxJS**
-  **SCSS**
+- **Angular 18**
+- **Elf** (state managment libary)
+- **RxJS**
+- **SCSS**
 
   ## Setup
   1. Clone the repository.
