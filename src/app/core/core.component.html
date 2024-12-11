@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="button"> 
-    <button class="add-user-btn" >Add User</button>
+    <button class="add-user-btn" [disabled]="!(isBtnForAddUserEnabled$ | async)">Add User</button>
   </div>
      
   <ng-template #loading>
@@ -10,8 +10,7 @@
   <ng-container *ngIf="users$ | async as users; else loading">
   
     <article>
-      <app-user-table [users]="users"
-      ></app-user-table>
+      <app-user-table [users]="users"  (toggleActive)="onToggleUserActiveStatus($event)"></app-user-table>
     </article>
   
   </ng-container>

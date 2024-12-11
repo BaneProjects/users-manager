@@ -19,12 +19,17 @@ export const userStore = createStore(
 
 @Injectable({ providedIn: 'root' })
 export class UserStore {
-
   private store = userStore;
  public getUsers(): Observable<User[]> {
     return this.store.pipe(select(state => state.users)); 
   }
 
-
+  updateUser(user: User) {
+    userStore.update(state => ({
+      users: state.users.map(existingUser => 
+        existingUser.id === user.id ? { ...existingUser, isActive: user.isActive } : existingUser
+      )
+    }));
+  }
 
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../state/model/user-model';
 
 @Component({
@@ -11,4 +11,11 @@ import { User } from '../../state/model/user-model';
 })
 export class UserTableComponent {
   @Input() users: User[] = [];
+  @Output() toggleActive: EventEmitter<User> = new EventEmitter();
+
+
+  onToggleActiveStatus(user: User) {
+
+    this.toggleActive.emit(user);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  Observable } from 'rxjs';
+import {  map, Observable } from 'rxjs';
 import { User } from '../state/model/user-model';
 import { UserStore } from '../state/user/user.store';
 import { UserTableComponent } from './user-table/user-table.component';
@@ -14,13 +14,25 @@ import { CommonModule } from '@angular/common';
 })
 export class CoreComponent {
   users$: Observable<User[]> | undefined;
- 
+  isBtnForAddUserEnabled$: Observable<boolean> | undefined;
 
   constructor(private userStore: UserStore) { }
   ngOnInit(): void {
     this.users$ = this.userStore.getUsers()
-    
+    this.isBtnForAddUserEnabled$ = this.users$.pipe(
+      map((users) => {
+        return users.length < 5 && users.every(user => user.isActive)
+      })
+    )
 
+
+  }
+
+
+  onToggleUserActiveStatus(user: User) {
+
+    const updatedUser = Object.assign({}, user, { isActive: !user.isActive });
+    this.userStore.updateUser(updatedUser)
 
   }
 }
