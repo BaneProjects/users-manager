@@ -1,7 +1,7 @@
 <div class="modal-overlay" (click) = "closeUserModal()"></div>
 <div class="holder">
     <div class="modal-card">
-      <form [formGroup]="addNewUserForm">
+      <form [formGroup]="addNewUserForm" (ngSubmit)="onSubmit()">
          <div class="modal-header">
            <div class="title">Add new User</div>
            <div class="close-modal" (click) = "closeUserModal()">&times;</div>
@@ -27,14 +27,14 @@
            
          </div>
            <div>
-            <label> 
-              <input type="checkbox"/>
+            <label for="isActive"> 
+              <input type="checkbox" id="isActive" formControlName="isActive"/>
               <span>Active</span>
             </label>
            </div>
          
-            <button type="submit"
-            [disabled]="addNewUserForm.invalid || addNewUserForm.pending">Create User</button>
+            <button  type="submit"
+            [disabled]="addNewUserForm.invalid || addNewUserForm.pending">Create new User</button>
           
          </div>
         </form>
