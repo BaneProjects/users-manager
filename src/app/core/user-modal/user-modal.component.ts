@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { compileNgModule } from '@angular/compiler';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserStore } from '../../state/user/user.store';

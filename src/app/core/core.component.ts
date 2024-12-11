@@ -30,7 +30,7 @@ export class CoreComponent {
   }
   onToggleUserActiveStatus(user: User) {
 
-    const updatedUser = Object.assign({}, user, { isActive: !user.isActive });
+    const updatedUser = {...user, isActive: !user.isActive}
     this.userStore.updateUser(updatedUser)
 
   }
